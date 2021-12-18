@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Poppins:wght@300;500;600;700&family=Grey+Qo&family=Parisienne&family=Roboto:wght@300;400&family=Ubuntu:wght@400;500;700&display=swap');
+
+$blue-1: #0885ec;
+$blue-2: #318ac5;
+$blue-light: #e5f5f2;
+$blue-dark: #0f397e;
+$white: #f2f7f3;
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+ 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+// h1, h2, h3, h4, p, span, a{
+//     text-align: center;
+// }
+
+$padding: 1rem;
+
+.navigation{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: $padding + 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .3s ease;
+    //background: $blue-light;
+    z-index: 3;
+    h3{
+        color: $blue-dark;
+        font-weight: bold;
+        margin-left: $padding;
+    }
+    &-links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: $padding;
+        a{
+            padding: $padding;
+            color: $blue-dark;
+            font-weight: bold;
+        }
+    }
+}
+
+.navigation.active{
+    background: $blue-light;
+}
+
+%btn{
+    padding: $padding/2;
+    background: $blue-dark;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid $blue-dark;
+    border-radius: 5px;
+    transition: .3s ease;
+    &:hover{
+        background: #fff;
+        color: $blue-dark;
+        cursor: pointer;
+    }
+}
+
+$shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+
+.header{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(images/bg-1.jpg);
+    background-size: cover;
+    &-card{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: $shadow;
+        border-radius: 10px;
+        width: 150px;
+        overflow: hidden;
+        top: 30%;
+        right: 40%;
+        padding: $padding/2;
+        img{
+            width: 60%;    
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: $padding/2;
+        }
+        p{
+            font-size: 10px;
+            text-align: center;
+            opacity: .7;
+            color: $blue-dark;
+        }
+    }
+    &-text{
+        width: 50%;
+        margin-left: $padding + 1rem;
+        h2, p{
+            color: $blue-1;
+        }
+        h2, span{
+            font-weight: 700;
+            font-size: 30px;
+        }
+        p{
+            font-size: 15px;
+            margin-top: $padding;
+        }
+        span{
+            color: $blue-dark;
+        }
+        button{
+            margin-top: $padding;
+            @extend %btn;
+        }
+    }
+}
+
+%icon{
+    background: $blue-light;
+    color: $blue-dark;
+    padding: $padding/2;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: $padding*5;
+    &-first{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        h2{
+            color: $blue-dark;
+            font-weight: 700;
+            text-align: left;
+        }
+        &-cards{
+            display: flex;
+            align-items: center;  
+            margin-top: $padding*3;
+            .first-card{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: $padding $padding*3;
+                ion-icon{
+                    @extend %icon;
+                }
+                h3{
+                    font-size: 17px;
+                    color: $blue-dark;
+                    font-weight: 500;
+                    margin: $padding/2 0;
+                }
+                p{
+                    font-size: 13px;
+                    text-align: center;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+    &-second{
+        background: $blue-light;
+        border-radius: 4px;
+        width: 80%;
+        margin-top: $padding*3;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        &-cards{
+            width: 40%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: $padding;
+            .second-card:last-child{
+                transform: translateY(-20px);
+            }
+            .second-card:nth-child(2){
+                transform: translateX(-20px);
+            }
+            .second-card:nth-child(1){
+                transform: translateX(-20px);
+            }
+            .second-card{
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: $shadow;
+                width: 180px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: $padding;
+                transition: transform .3s ease-in-out;
+                img{
+                    border-radius: 50%;
+                    width: 100px;
+                    height: 100px;
+                }
+                h2{
+                    color: $blue-dark;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+                span{
+                    width: 80%;
+                    height: 30px;
+                    border-radius: 10px;
+                    margin: $padding 0;
+                    background: #a8a8a834;
+                }
+                &:hover{
+                    cursor: pointer;
+                    transform: translateY(10px);
+                }
+            }
+        }
+        &-text{
+            width: 40%;
+            margin: $padding;
+            h3{
+                font-size: 17px;
+                color: $blue-1;
+                font-weight: 500;
+                margin: $padding/2 0;
+            }
+            h2{
+                color: $blue-dark;
+                font-weight: 700;
+            }
+            p{
+                font-size: 15px;
+                color: $blue-1;
+            }
+        }
+    }
+    &-third{
+        margin: $padding*3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        h2{
+            color: $blue-dark;
+            font-weight: 700;
+        }
+        &-cards{
+            display: flex;
+            align-items: center;  
+            margin-top: $padding*3;
+            .third-card{
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: $shadow;
+                width: 180px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                margin: $padding;
+                padding: $padding;
+                transition: transform .3s ease-in-out;
+                ion-icon{
+                    color: #ffd000;
+                }
+                img{
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                }
+                h2{
+                    color: $blue-dark;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+                p{
+                    font-size: 13px;
+                    opacity: .7;
+                    color: $blue-dark;
+                }
+                &:hover{
+                    transform: scale(1.2);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &-fourth{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        h2{
+            color: $blue-dark;
+            font-weight: 700;
+        }
+        &-cards{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: $padding 0;
+            .fourth-card{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                background: #fff;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                margin: $padding*2;
+                width: 200px;
+                transform-origin: left top;
+                transition: transform .3s ease-in-out;
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 150px;
+                }
+                div{
+                    h2{
+                        color: $blue-dark;
+                        font-weight: 500;
+                        font-size: 18px
+                    }
+                    h3{
+                        font-size: 15px;
+                        color: $blue-2;
+                    }
+                    p{
+                        font-size: 13px;
+                        opacity: .7;
+                    }
+                }
+                &:hover{
+                    transform: rotate(10deg);
+                    cursor: pointer;
+                }
+            }
+        }
+        button{
+            @extend %btn;
+            background: $blue-1;
+            border-color: $blue-1;
+            &:hover{
+                color: $blue-1;    
+            }
+        }
+    }
+}
+
+.footer{
+    width: 100%;
+    margin-top: $padding*3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-header{
+        width: 50%;
+        background: $blue-light;
+        border-radius: 10px;
+        margin: $padding;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: $padding*3;
+        h2{
+            color: $blue-dark;
+            font-weight: 700;
+            font-size: 20px;
+            margin: $padding/2 0;
+        }
+        h3{
+            font-size: 15px;
+            color: $blue-2;
+            font-weight: 500;
+            text-align: center;
+        }
+        div{
+            margin: $padding 0;
+            input{
+                border-radius: 10px;
+                border: 2px solid $blue-dark;
+                padding: $padding/2;
+                &:focus{
+                    outline: none;
+                    background: $blue-light;
+                }
+            }
+            button{
+                @extend %btn;
+                background: #fff;
+                color: $blue-dark;
+                &:hover{
+                    color: #fff;
+                    background: $blue-dark;
+                }
+            }
+        }
+    }
+    &-about{
+        width: 90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-top: $padding*2;
+        div{
+            width: 100px;   
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;
+            h3{
+                font-size: 15px;
+                color: $blue-2;
+                font-weight: 500;
+            }
+            p{
+                font-size: 13px;
+                opacity: .7;
+                text-align: left;
+            }
+        }
+    }
+    &-copy{
+        padding: $padding;
+        span{
+            a{
+                color: $blue-dark;
+            }
+        }
+    }
+}
+
